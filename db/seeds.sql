@@ -9,7 +9,7 @@ VALUES
 USE burgers_db;   
 
 UPDATE burgers 
-SET burger_name = "Cheeseburger"
+SET devoured = false
 WHERE id = 1;
 
 SELECT * FROM burgers;
