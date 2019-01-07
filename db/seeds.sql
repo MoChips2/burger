@@ -6,11 +6,10 @@ VALUES
     ("Bacon burger", false),
     ("California burger", false);
     
-    
 USE burgers_db;   
 
-UPDATE burgers
-SET burger_name = "Bacon burger"
-WHERE id = 2; 
+UPDATE burgers 
+SET burger_name = "Cheeseburger"
+WHERE id = 1;
 
 SELECT * FROM burgers;
