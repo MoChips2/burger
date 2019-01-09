@@ -2,7 +2,7 @@
 
   <div class="row" id="img">
     <br>
-    <img src="../public/assets/img/burger.png" alt="burger">
+    <img src="/public/assets/img/burger.png" alt="burger">
   </div>
 
   <br>
@@ -14,36 +14,44 @@
       New Burgers:
       <ul>
         {{#each burgers}}
+        <li>
           {{#unless devoured}}
-            <li>
-              {{burger_name}}
-              {{devoured}}
-            </li>
+          {{burger_name}}
+          <button class="devour" data-id="{{id}}" data-newdevour="{{devoured}}">
+            {{#unless devoured}}EAT IT!{{/unless}}
+          </button>
           {{/unless}}
-        {{/each}}  
+        </li>
+        {{/each}}
       </ul>
     </div>
     <div class="col-md-6">
       Devoured Burgers:
-       <ul>
+      <ul>
         {{#each burgers}}
+        <li>
           {{#if devoured}}
-            <li>
-              {{burger_name}}
-              {{devoured}}
-            </li>
+          {{burger_name}}
+          <button class="devour" data-id="{{id}}" data-newdevour="{{devoured}}">
+            {{#if devoured}}Devoured!{{/if}}
+          </button>
           {{/if}}
-        {{/each}}  
+        </li>
+        {{/each}}
       </ul>
     </div>
   </div>
-</div>
 
+  <div class="row">
 
+  <form class="form">
+    <div class="form-group">
+      <label for="burg">Burger Name:</label>
+      <input type="text" id="burg" name="name">
+    </div>
+    <button type="submit">Add Burger</button>
+  </form>
 
-<form class="create-form">
-  <div class="form-group">
-    <label for="burg">Burger Name:</label>
-    <input type="text" id="burg" name="name">
   </div>
-</form>
+
+</div>
