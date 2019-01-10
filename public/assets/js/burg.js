@@ -2,22 +2,21 @@ $(document).ready(function() {
   // update devour value
   $(".devour").on("click", function (event) {
     var id = $(this).data("id");
-    var eaten = $(this).data("newdevour");
-
+  
     var eatenState = {
-      devoured: eaten
+      devoured: true
     };
 
     $.ajax("/api/burgers/" + id, {
       type: "PUT",
       data: eatenState
     }).then(function () {
-      console.log("changed eat to: " + eaten);
+      console.log("changed eat to: true");
       location.reload();
     });
   });
 
-  $(".form").on("click", function () {
+  $("#submit").on("click", function (event) {
     event.preventDefault();
 
     var newBurger = {
